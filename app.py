@@ -1,6 +1,8 @@
 from flask import Flask, request, flash, redirect, jsonify
 from dotenv import load_dotenv
 import os
+from flask_cors import CORS
+
 
 # mongo db
 import pymongo
@@ -15,6 +17,7 @@ students_collection = db.students
 attendance_collection = db.attendance
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
